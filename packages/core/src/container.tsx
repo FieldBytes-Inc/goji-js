@@ -141,12 +141,13 @@ export class Container {
       const scopedUpdatesInstances = Array.from(scopedUpdates.keys());
 
       readyPendingCount = scopedUpdatesInstances.length + 1;
+      // update root state first to avoid error
+      this.adaptorInstance.updateData(rootUpdates, _callback, _currentRenderId);
 
       scopedUpdatesInstances.forEach(item => {
         item?.setData(scopedUpdates.get(item), _callback);
       });
 
-      this.adaptorInstance.updateData(rootUpdates, _callback, _currentRenderId);
     };
 
     if (gojiBlockingMode) {
