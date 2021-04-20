@@ -561,7 +561,6 @@ export const getBuiltInComponents = (target: GojiTarget): ComponentDesc[] =>
           'regionchange',
           'poitap',
         ],
-        isLeaf: true,
       },
       // Canvas
       {
