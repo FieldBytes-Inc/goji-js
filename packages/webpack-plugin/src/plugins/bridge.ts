@@ -19,12 +19,7 @@ import { getSubpackagesInfo, findBelongingSubPackage } from '../utils/config';
  */
 export class GojiBridgeWebpackPlugin extends GojiBasedWebpackPlugin {
   private renderTemplate<T>(pathname: string, data?: T) {
-    return renderTemplate(
-      // use wechat for integration mode because `mina-webpack` would transform the code to different platforms
-      this.options.unsafe_integrationMode ? 'wechat' : this.options.target,
-      path.resolve(TEMPLATES_DIR, pathname),
-      data,
-    );
+    return renderTemplate(this.options.target, path.resolve(TEMPLATES_DIR, pathname), data);
   }
 
   private getWhitelistedComponents(compilation: webpack.compilation.Compilation) {
@@ -201,6 +196,7 @@ export class GojiBridgeWebpackPlugin extends GojiBasedWebpackPlugin {
   private async renderWrappedComponents(
     compilation: webpack.compilation.Compilation,
     basedir: string,
+    useSubtree: boolean
   ) {
     const components = this.getWhitelistedComponents(compilation);
     for (const component of components) {
@@ -216,6 +212,7 @@ export class GojiBridgeWebpackPlugin extends GojiBasedWebpackPlugin {
           path.join(basedir, `${BRIDGE_OUTPUT_PATH}/components/${component.name}.json`),
           `components/${component.name}.json.ejs`,
           {
+            useSubtree,
             relativePathToBridge: '.',
             components: this.getWhitelistedComponents(compilation),
           },
@@ -261,7 +258,7 @@ export class GojiBridgeWebpackPlugin extends GojiBasedWebpackPlugin {
         // render leaf-components
         await this.renderLeafTemplate(compilation, bridgeBasedirs);
         // render wrapped components
-        await this.renderWrappedComponents(compilation, bridgeBasedirs);
+        await this.renderWrappedComponents(compilation, bridgeBasedirs, useSubtree);
       }
 
       const pathEntries = pathEntriesMap.get(compiler);
