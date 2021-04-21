@@ -23,7 +23,7 @@
     "react": "^16.13.1",
     "react-redux": "^7.2.1",
     "redux": "^4.0.5",
-    "tslib": "^2.0.3"
+    "tslib": "^2.2.0"
   },
   "devDependencies": {
     "@goji/cli": "^0.10.0",
@@ -34,6 +34,6 @@
     "babel-jest": "^26.2.2",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^26.2.2",
-    "typescript": "^4.0.5"
+    "typescript": "^4.2.4"
   }
 }
