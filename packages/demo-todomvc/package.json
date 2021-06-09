@@ -12,7 +12,8 @@
     "test": "npm run jest && npm run typecheck",
     "start": "goji start",
     "build": "goji build",
-    "lint": "eslint --ext .js,.ts,.jsx,.tsx ."
+    "lint": "eslint --ext .js,.ts,.jsx,.tsx .",
+    "eslint": "beemo eslint src/"
   },
   "dependencies": {
     "@goji/core": "^0.10.0",
@@ -26,6 +27,7 @@
     "tslib": "^2.0.3"
   },
   "devDependencies": {
+    "@goji/beemo": "^0.10.0",
     "@goji/cli": "^0.10.0",
     "@goji/testing-library": "^0.10.0",
     "@types/classnames": "^2.2.10",
