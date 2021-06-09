@@ -1,8 +1,3 @@
-import { BeemoConfig } from '@beemo/core';
+import BeemoConfig from '../../../.config/beemo';
 
-const config: BeemoConfig = {
-  module: '@goji/beemo',
-  drivers: ['eslint'],
-};
-
-export default config;
+export default BeemoConfig;

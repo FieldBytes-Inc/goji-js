@@ -1,6 +1,7 @@
 import { ESLintConfig } from '@beemo/driver-eslint';
 
 const config: ESLintConfig = {
+  ignore: ['**/dist/*', '**/node_modules/*', '**/.cache-loader/*', '**/coverage/*'],
   extends: ['airbnb', 'airbnb/hooks', 'prettier', 'prettier/react'],
   plugins: ['@typescript-eslint', 'jest'],
   parser: '@typescript-eslint/parser',

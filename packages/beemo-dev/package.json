@@ -1,0 +1,24 @@
+{
+  "name": "@goji/beemo-dev",
+  "version": "0.10.0",
+  "description": "Beemo Config for GojiJS Development",
+  "main": "src/index.ts",
+  "repository": "https://github.com/airbnb/goji-js.git",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "@beemo/cli": "^2.0.0-rc.3",
+    "@beemo/core": "^2.0.0-rc.3",
+    "@beemo/driver-eslint": "^2.0.0-rc.3",
+    "@beemo/driver-prettier": "^2.0.0-rc.3",
+    "eslint": "^7.28.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jest": "^24.0.2",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-react": "^7.21.0",
+    "eslint-plugin-react-hooks": "^4.1.2",
+    "prettier": "^2.3.1"
+  }
+}

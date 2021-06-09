@@ -13,7 +13,7 @@
     "start": "goji start",
     "build": "goji build",
     "lint": "eslint --ext .js,.ts,.jsx,.tsx .",
-    "eslint": "beemo eslint src/"
+    "eslint": "beemo eslint src/ --ext .js,.ts,.jsx,.tsx ."
   },
   "dependencies": {
     "@goji/core": "^0.10.0",
@@ -27,7 +27,7 @@
     "tslib": "^2.0.3"
   },
   "devDependencies": {
-    "@goji/beemo": "^0.10.0",
+    "@goji/beemo-dev": "^0.10.0",
     "@goji/cli": "^0.10.0",
     "@goji/testing-library": "^0.10.0",
     "@types/classnames": "^2.2.10",
